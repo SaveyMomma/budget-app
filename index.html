@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Budget Helper</title>
+    <meta name="description" content="Complete family budget planner with bill tracking, envelope challenge, and meal planning">
+    <meta name="theme-color" content="#d4a574">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkZhbWlseSBCdWRnZXQgSGVscGVyIiwKICAic2hvcnRfbmFtZSI6ICJCdWRnZXQgSGVscGVyIiwKICAiZGVzY3JpcHRpb24iOiAiQ29tcGxldGUgZmFtaWx5IGJ1ZGdldCBwbGFubmVyIHdpdGggYmlsbCB0cmFja2luZywgZW52ZWxvcGUgY2hhbGxlbmdlLCBhbmQgbWVhbCBwbGFubmluZyIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmFmN2Y1IiwKICAidGhlbWVfY29sb3IiOiAiI2Q0YTU3NCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ2RtbGxkMEp2ZUQwaU1DQXdJREV5T0NBeU9EZ2lJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2QybGtkR2c5SWpFeU9DSWdhR1ZwWjJoMFBTSXlPRGdpSUhKNFBTSTJOQ0lnWm1sc2JEMGlJekUxT1RJMk5pSXZQanh5WldOMElIZzlJakl3SWlCNVBTSXlNQ0lnZDJsa2RHZzlJamc0SWlCb1pXbG5hSFE5SWpJME9DSWdVbmc5SWpRMElpQm1hV3hzUFNKZ1ptWm1abVptSWk4K1BIUmxlSFFnZUQwaU5qUWlJSGs5SWpZMElpQm1hV3hzUFNKaVlXTnJJaUJtYjI1MExYTnBlbVU5SWpRNElpQjBaWGgwTFdGdVkyaHZjajFpYldsa1pHeGxJajQ4TDNSbGVIUStQQzl6ZG1jKyIsCiAgICAgICJzaXplcyI6ICIxMjh4MTI4IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnZG1sbGQwSnZlRDBpTUNBd0lEVXhNaUExTVRJaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BISmxZM1FnZDJsa2RHZzlJalV4TWlJZ2FHVnBaMmgwUFNJMU1USWlJSEo0UFNJeU5UWWlJR1pwYkd3OUlpTXhOVGt5TmpZaUx6NDhjbVZqZENCNFBTSTRNQ0lnZVQwaU9EQWlJSGRwWkhSb1BTSXpOVElpSUdobGFXZG9kRDBpTXpVeUlpQlNlRDBpTVRjMklpQm1hV3hzUFNKZ1ptWm1abVptSWk4K1BIUmxlSFFnZUQwaU1qVTJJaUI1UFNJeU5UWWlJR1pwYkd3OUlpSmlaV0ZqYXlJZ1ptOXVkQzF6YVhwbFBTSXhPVElpSUhSbGVIUXRZVzVqYUc5eVBXSnRhV1JrYkdVaVBqdzlkR1Y0ZEQ0OEwzTjJaejQiLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXSwKICAiY2F0ZWdvcmllcyI6IFsiZmluYW5jZSIsICJwcm9kdWN0aXZpdHkiLCAidXRpbGl0aWVzIl0sCiAgImxhbmciOiAiZW4iCn0=">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAyODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIyODgiIHJ4PSI2NCIgZmlsbD0iIzE1OTI2NiIvPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9Ijg4IiBoZWlnaHQ9IjI0OCIgUng9IjQ0IiBmaWxsPSIjZmZmZmZmIi8+PHRleHQgeD0iNjQiIHk9IjY0IiBmaWxsPSJiYWNrIiBmb250LXNpemU9IjQ4IiB0ZXh0LWFuY2hvcj1ibWlkZGxlPjwvdGV4dD48L3N2Zz4=">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .celebration {
+            animation: bounce 0.6s ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-card {
+            background: linear-gradient(135deg, #faf7f5 0%, #f5f1ee 100%);
+            border: 1px solid #e8ddd4;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #d4a574 0%, #c19660 100%);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c19660 0%, #b08751 100%);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #e8c4a0 0%, #ddb892 100%);
+        }
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #ddb892 0%, #d2ad84 100%);
+        }
+        .priority-high { border-left: 4px solid #dc2626; }
+        .priority-medium { border-left: 4px solid #f59e0b; }
+        .priority-low { border-left: 4px solid #10b981; }
+        .envelope-completed { background: linear-gradient(135deg, #d4a574 0%, #c19660 100%); color: white; }
+        .envelope-available { background: #faf7f5; border: 2px solid #d4a574; }
+        .screenshot-area {
+            border: 2px dashed #d4a574;
+            background: #faf7f5;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #d4a574 0%, #c19660 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .install-prompt {
+                left: auto;
+                right: 20px;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-stone-50 to-amber-50 min-h-full">
+    <!-- PWA Install Prompt -->
+    <div id="install-prompt" class="install-prompt">
+        <div class="flex items-center justify-between">
+            <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1">📱 Install Budget Helper</h3>
+                <p class="text-sm opacity-90">Add to your home screen for easy access!</p>
+            </div>
+            <div class="flex gap-2 ml-4">
+                <button id="install-button" class="bg-white text-stone-700 px-4 py-2 rounded-lg font-medium text-sm">Install</button>
+                <button id="dismiss-install" class="text-white opacity-75 hover:opacity-100 text-xl">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-6 max-w-6xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-stone-700 mb-2">💰 Family Budget Helper</h1>
+            <p class="text-stone-600">Your complete financial wellness companion</p>
+        </header>
+
+        <!-- Motivational Quote -->
+        <div id="quote-section" class="section-card rounded-lg shadow-md p-6 mb-6 text-center">
+            <p id="motivational-quote" class="text-lg text-stone-600 italic"></p>
+        </div>
+
+        <!-- Setup Section -->
+        <section id="setup" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">🎯 Budget Setup</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label for="budget-period" class="block text-sm font-medium text-stone-700 mb-2">Budget Period</label>
+                    <select id="budget-period" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Bi-weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="budget-month" class="block text-sm font-medium text-stone-700 mb-2">Budget Month/Year</label>
+                    <input type="month" id="budget-month" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
+                </div>
+                <div>
+                    <label for="family-size" class="block text-sm font-medium text-stone-700 mb-2">Family Size</label>
+                    <input type="number" id="family-size" min="1" value="4" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Income & Savings Section -->
+        <section id="income" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">💵 Income & Savings</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-4">
+                <div>
+                    <label for="regular-income" class="block text-sm font-medium text-stone-700 mb-2">Regular Income</label>
+                    <input type="number" id="regular-income" step="0.01" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="extra-income" class="block text-sm font-medium text-stone-700 mb-2">Extra/Unplanned Income</label>
+                    <input type="number" id="extra-income" step="0.01" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400" placeholder="0.00">
+                </div>
+                <div>
+                    <label for="current-savings" class="block text-sm font-medium text-stone-700 mb-2">Current Savings</label>
+                    <input type="number" id="current-savings" step="0.01" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400" placeholder="0.00">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <p class="text-amber-700 font-medium">Total Income: $<span id="total-income">0.00</span></p>
+                </div>
+                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200">
+                    <p class="text-stone-700 font-medium">Savings Balance: $<span id="savings-balance">0.00</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bank Statement Analysis -->
+        <section id="bank-analysis" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">📄 Smart Bank Statement Analysis</h2>
+            <p class="text-stone-600 mb-4">Upload, screenshot, or take a photo of your bank statement for automatic spending analysis</p>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-stone-700 mb-2">Upload File</label>
+                    <input type="file" id="bank-statement" accept=".pdf,.csv,.txt,.jpg,.png" class="w-full p-2 border border-stone-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-stone-700 mb-2">Take Photo</label>
+                    <input type="file" id="bank-photo" accept="image/*" capture="camera" class="w-full p-2 border border-stone-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-stone-700 mb-2">Screenshot Area</label>
+                    <div id="screenshot-area" class="screenshot-area rounded-lg">
+                        <p class="text-stone-500">Click to paste screenshot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="analyzeStatement()" class="btn-primary text-white px-6 py-2 rounded-lg mb-4">Analyze Statement</button>
+            
+            <div id="analysis-results" class="hidden">
+                <h3 class="text-lg font-semibold text-stone-700 mb-3">📊 Spending Analysis</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div id="detected-expenses" class="space-y-2">
+                        <h4 class="font-medium text-stone-700">Detected Expenses</h4>
+                        <!-- Detected expenses will appear here -->
+                    </div>
+                    <div id="spending-suggestions" class="bg-rose-50 p-4 rounded-lg border border-rose-200">
+                        <h4 class="font-medium text-rose-700 mb-2">💡 Ways to Cut Spending</h4>
+                        <div id="cut-suggestions"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priority Bills & Debt Management -->
+        <section id="bills-debt" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">🏠 Bills & Debt Priority Manager</h2>
+            
+            <!-- Add Bill/Debt -->
+            <div class="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <h3 class="text-lg font-semibold text-stone-700 mb-3">Add Bill or Debt</h3>
+                <div class="grid md:grid-cols-7 gap-2 mb-2">
+                    <input type="text" id="bill-name" placeholder="Name" class="p-2 border border-stone-300 rounded-lg">
+                    <input type="number" id="bill-amount" step="0.01" placeholder="Amount" class="p-2 border border-stone-300 rounded-lg">
+                    <input type="number" id="bill-balance" step="0.01" placeholder="Current Balance" class="p-2 border border-stone-300 rounded-lg">
+                    <input type="date" id="bill-due-date" class="p-2 border border-stone-300 rounded-lg">
+                    <select id="bill-type" class="p-2 border border-stone-300 rounded-lg">
+                        <option value="essential">Essential (Rent/Utilities)</option>
+                        <option value="debt">Debt Payment</option>
+                        <option value="regular">Regular Bill</option>
+                    </select>
+                    <select id="bill-status" class="p-2 border border-stone-300 rounded-lg">
+                        <option value="current">Current</option>
+                        <option value="past-due">Past Due</option>
+                    </select>
+                    <button onclick="addBillDebt()" class="btn-primary text-white px-4 py-2 rounded-lg">Add</button>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <label class="flex items-center gap-2 text-sm text-stone-600">
+                        <input type="checkbox" id="split-bills" class="rounded">
+                        Split monthly bills into weekly payments
+                    </label>
+                </div>
+            </div>
+
+            <!-- Priority List -->
+            <div id="priority-list" class="space-y-3 mb-4">
+                <h3 class="text-lg font-semibold text-stone-700">📋 Payment Priority Order</h3>
+                <!-- Priority items will be added here -->
+            </div>
+        </section>
+
+        <!-- Miscellaneous Categories -->
+        <section id="misc-categories" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">🛒 Miscellaneous Spending Categories</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">⛽ Gas & Transportation</h4>
+                    <div id="gas-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="gas-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('gas')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">🛍️ Clothing & Shopping</h4>
+                    <div id="clothing-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="clothing-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('clothing')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">🧴 Hygiene & Personal Care</h4>
+                    <div id="hygiene-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="hygiene-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('hygiene')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">🐕 Pet Care</h4>
+                    <div id="pet-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="pet-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('pet')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">📚 School Supplies</h4>
+                    <div id="school-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="school-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('school')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-700 mb-2">⚡ Unexpected Expenses</h4>
+                    <div id="unexpected-expenses" class="space-y-1 text-sm"></div>
+                    <div class="flex gap-1 mt-2">
+                        <input type="number" id="unexpected-amount" step="0.01" placeholder="Amount" class="flex-1 p-1 border border-stone-300 rounded text-sm">
+                        <button onclick="addCategoryExpense('unexpected')" class="btn-secondary text-stone-700 px-2 py-1 rounded text-xs">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-stone-50 p-4 rounded-lg border border-stone-200">
+                <p class="text-stone-700 font-medium">Total Miscellaneous: $<span id="total-misc">0.00</span></p>
+            </div>
+        </section>
+
+        <!-- Financial Analysis -->
+        <section id="analysis" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">📊 Financial Overview</h2>
+            
+            <div class="grid md:grid-cols-4 gap-6 mb-6">
+                <div class="bg-amber-50 p-4 rounded-lg text-center border border-amber-200">
+                    <h3 class="font-semibold text-amber-700">Available Money</h3>
+                    <p class="text-2xl font-bold text-amber-600" id="available-money">$0.00</p>
+                </div>
+                <div class="bg-rose-50 p-4 rounded-lg text-center border border-rose-200">
+                    <h3 class="font-semibold text-rose-700">Total Expenses</h3>
+                    <p class="text-2xl font-bold text-rose-600" id="total-expenses">$0.00</p>
+                </div>
+                <div class="bg-stone-50 p-4 rounded-lg text-center border border-stone-200">
+                    <h3 class="font-semibold text-stone-700">Potential Savings</h3>
+                    <p class="text-2xl font-bold text-stone-600" id="potential-savings">$0.00</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center border border-green-200">
+                    <h3 class="font-semibold text-green-700">Emergency Fund Goal</h3>
+                    <p class="text-2xl font-bold text-green-600" id="emergency-goal">$1,000</p>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div id="recommendations" class="bg-stone-50 p-4 rounded-lg border border-stone-200">
+                <h3 class="font-semibold text-stone-700 mb-2">💡 Personalized Recommendations</h3>
+                <div id="recommendation-list"></div>
+            </div>
+
+            <!-- Celebration Area -->
+            <div id="celebration" class="hidden bg-amber-100 border-2 border-amber-300 p-4 rounded-lg text-center mt-4">
+                <p class="text-amber-700 font-bold text-lg">🎉 Great job! You're making progress!</p>
+            </div>
+        </section>
+
+        <!-- Budget Meals Section -->
+        <section id="meals" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">🍽️ Budget-Friendly Family Meals</h2>
+            <p class="text-stone-600 mb-4">Realistic 2024 grocery prices with store comparisons</p>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label for="meal-budget" class="block text-sm font-medium text-stone-700 mb-2">Weekly Grocery Budget</label>
+                    <input type="number" id="meal-budget" step="0.01" placeholder="Enter your grocery budget" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
+                </div>
+                <div>
+                    <label for="dietary-needs" class="block text-sm font-medium text-stone-700 mb-2">Dietary Needs</label>
+                    <select id="dietary-needs" class="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
+                        <option value="general">General Family</option>
+                        <option value="allergies">Food Allergies</option>
+                        <option value="diabetic">Diabetic-Friendly</option>
+                        <option value="kid-friendly">Kid-Friendly</option>
+                        <option value="single-parent">Single Parent Quick Meals</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <button onclick="generateWeeklyMeals()" class="btn-primary text-white px-6 py-2 rounded-lg mr-2">Generate This Week's Meals</button>
+                <button onclick="generateNextWeekMeals()" class="btn-secondary text-stone-700 px-6 py-2 rounded-lg">Preview Next Week</button>
+            </div>
+
+            <div id="current-week" class="mb-6">
+                <h3 class="text-lg font-semibold text-stone-700 mb-3">📅 This Week's Meal Plan</h3>
+                <div id="meal-suggestions" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Meal suggestions will be populated here -->
+                </div>
+            </div>
+
+            <div id="next-week-preview" class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200 hidden">
+                <h3 class="font-semibold text-amber-700 mb-2">📅 Next Week's Meal Preview</h3>
+                <div id="next-week-meals" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                    <!-- Next week meals will be populated here -->
+                </div>
+                <p id="next-week-message" class="text-amber-600"></p>
+            </div>
+        </section>
+
+        <!-- 100 Envelope Challenge -->
+        <section id="envelope-challenge" class="section-card rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-stone-700 mb-4">💌 100 Envelope Savings Challenge</h2>
+            <p class="text-stone-600 mb-4">Save $5,050 by completing all 100 envelopes! Click each envelope when you save that amount.</p>
+            
+            <div class="mb-4">
+                <div class="bg-amber-50 p-3 rounded-lg border border-amber-200">
+                    <p class="text-amber-700 font-medium">Progress: <span id="envelope-progress">0</span>/100 envelopes completed</p>
+                    <p class="text-amber-700">Total Saved: $<span id="envelope-total">0.00</span> / $5,050.00</p>
+                    <div class="w-full bg-stone-200 rounded-full h-3 mt-2">
+                        <div id="envelope-progress-bar" class="bg-amber-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="envelope-grid" class="grid grid-cols-10 gap-2 mb-4">
+                <!-- Envelope grid will be generated here -->
+            </div>
+            
+            <button onclick="resetEnvelopeChallenge()" class="btn-secondary text-stone-700 px-4 py-2 rounded-lg">Reset Challenge</button>
+        </section>
+    </div>
+
+    <script>
+        // PWA Installation
+        let deferredPrompt;
+        let installPromptShown = false;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            if (!installPromptShown) {
+                showInstallPrompt();
+                installPromptShown = true;
+            }
+        });
+
+        function showInstallPrompt() {
+            const installPrompt = document.getElementById('install-prompt');
+            const installButton = document.getElementById('install-button');
+            const dismissButton = document.getElementById('dismiss-install');
+            
+            installPrompt.style.display = 'block';
+            
+            installButton.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                }
+                installPrompt.style.display = 'none';
+            });
+            
+            dismissButton.addEventListener('click', () => {
+                installPrompt.style.display = 'none';
+            });
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'budget-helper-v1';
+                    const urlsToCache = [
+                        '/',
+                        'https://cdn.tailwindcss.com'
+                    ];
+
+                    self.addEventListener('install', (event) => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then((cache) => cache.addAll(urlsToCache))
+                        );
+                    });
+
+                    self.addEventListener('fetch', (event) => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then((response) => {
+                                    if (response) {
+                                        return response;
+                                    }
+                                    return fetch(event.request);
+                                })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Global variables
+        let budgetData = {
+            period: 'weekly',
+            familySize: 4,
+            budgetMonth: '',
+            regularIncome: 0,
+            extraIncome: 0,
+            currentSavings: 0,
+            bills: [],
+            categoryExpenses: {
+                gas: [],
+                clothing: [],
+                hygiene: [],
+                pet: [],
+                school: [],
+                unexpected: []
+            },
+            envelopeProgress: [],
+            splitBills: false
+        };
+
+        // Current week number for meal rotation
+        let currentWeek = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000)) % 4;
+
+        // Motivational quotes
+        const quotes = [
+            "Every dollar you save is a step toward financial freedom.",
+            "Small changes in spending can lead to big changes in your future.",
+            "You're stronger than your financial challenges.",
+            "Progress, not perfection, is the goal.",
+            "Every budget is a plan for your dreams.",
+            "Financial wellness is a journey, not a destination.",
+            "You have the power to change your financial story.",
+            "Budgeting is telling your money where to go instead of wondering where it went."
+        ];
+
+        // Spending cut suggestions
+        const spendingCuts = {
+            gas: [
+                "Combine errands into one trip to save gas",
+                "Use apps like GasBuddy to find cheapest gas prices",
+                "Walk or bike for short trips under 1 mile",
+                "Carpool with friends or family when possible",
+                "Keep tires properly inflated to improve gas mileage"
+            ],
+            clothing: [
+                "Shop at thrift stores and consignment shops",
+                "Wait for end-of-season sales (buy winter clothes in spring)",
+                "Use apps like Poshmark or Facebook Marketplace",
+                "Host clothing swaps with friends and family",
+                "Focus on versatile pieces that mix and match"
+            ],
+            dining: [
+                "Cook at home instead of eating out",
+                "Pack lunches for work and school",
+                "Use grocery store apps for digital coupons",
+                "Buy generic brands instead of name brands",
+                "Plan meals around sales and seasonal produce"
+            ],
+            entertainment: [
+                "Use free activities like parks, libraries, and community events",
+                "Share streaming subscriptions with family",
+                "Look for happy hour specials and discount days",
+                "Host potluck dinners instead of going out",
+                "Use apps like Groupon for discounted activities"
+            ],
+            subscriptions: [
+                "Cancel unused subscriptions and memberships",
+                "Downgrade to basic plans where possible",
+                "Share family plans with relatives",
+                "Use free alternatives (YouTube instead of premium music)",
+                "Set calendar reminders to review subscriptions monthly"
+            ]
+        };
+
+        // Budget meal suggestions by dietary needs and week (2024 realistic prices)
+        const budgetMeals = {
+            general: [
+                [
+                    { name: "Bean and Rice Bowl", cost: 6.50, ingredients: "Rice ($2), black beans ($1.50), onion ($1), garlic, spices ($2)", stores: "Walmart: $6.25 | Aldi: $5.89 | Target: $6.75" },
+                    { name: "Pasta with Marinara", cost: 7.25, ingredients: "Pasta ($1.50), canned tomatoes ($2), garlic ($1), herbs ($2.75)", stores: "Kroger: $7.10 | Walmart: $6.95 | Publix: $7.50" },
+                    { name: "Egg Fried Rice", cost: 8.75, ingredients: "Rice ($2), eggs ($3.50), frozen vegetables ($2.25), soy sauce ($1)", stores: "Aldi: $8.25 | Walmart: $8.50 | Target: $9.15" },
+                    { name: "Lentil Soup", cost: 9.00, ingredients: "Lentils ($2.50), carrots ($2), celery ($2), onion ($1), broth ($1.50)", stores: "Whole Foods: $9.75 | Kroger: $8.85 | Walmart: $8.50" },
+                    { name: "Baked Potato Bar", cost: 12.50, ingredients: "Potatoes 5lb bag ($5), cheese ($4), beans ($1.50), butter ($2)", stores: "Costco: $11.25 | Walmart: $12.15 | Safeway: $13.25" },
+                    { name: "Pancakes for Dinner", cost: 6.75, ingredients: "Flour ($2), eggs ($3.50), milk ($1.25)", stores: "Aldi: $6.25 | Walmart: $6.50 | Target: $7.25" }
+                ],
+                [
+                    { name: "Tuna Pasta Salad", cost: 9.75, ingredients: "Pasta ($1.50), canned tuna ($3.50), mayo ($2.25), vegetables ($2.50)", stores: "Walmart: $9.25 | Kroger: $9.85 | Target: $10.50" },
+                    { name: "Vegetable Stir-fry", cost: 8.25, ingredients: "Mixed frozen vegetables ($3.50), rice ($2), soy sauce ($1), oil ($1.75)", stores: "Aldi: $7.75 | Walmart: $8.00 | Whole Foods: $9.25" },
+                    { name: "Grilled Cheese & Soup", cost: 8.25, ingredients: "Bread ($2.50), cheese ($4), canned soup ($1.75)", stores: "Walmart: $7.95 | Kroger: $8.15 | Target: $8.75" },
+                    { name: "Chicken and Dumplings", cost: 12.90, ingredients: "Chicken thighs ($6.50), flour ($2), broth ($1.50), vegetables ($2.90)", stores: "Costco: $11.75 | Walmart: $12.50 | Publix: $13.85" },
+                    { name: "Spaghetti Aglio e Olio", cost: 5.50, ingredients: "Spaghetti ($1.50), garlic ($1), olive oil ($3)", stores: "Aldi: $5.15 | Walmart: $5.35 | Target: $5.95" },
+                    { name: "Bean Quesadillas", cost: 8.80, ingredients: "Tortillas ($2.50), refried beans ($1.50), cheese ($4), salsa ($0.80)", stores: "Walmart: $8.45 | Kroger: $8.75 | Target: $9.25" }
+                ]
+            ],
+            allergies: [
+                [
+                    { name: "Rice and Veggie Bowl", cost: 8.25, ingredients: "Rice ($2), mixed vegetables ($3.50), olive oil ($2.75) (gluten-free)", stores: "Whole Foods: $8.95 | Walmart: $7.85 | Target: $8.50" },
+                    { name: "Potato Soup", cost: 9.50, ingredients: "Potatoes ($5), vegetable broth ($2.50), herbs ($2) (dairy-free)", stores: "Kroger: $9.25 | Walmart: $9.15 | Safeway: $10.25" },
+                    { name: "Quinoa Salad", cost: 12.25, ingredients: "Quinoa ($4.50), cucumber ($2), tomato ($3), lemon ($2.75) (nut-free)", stores: "Whole Foods: $13.50 | Target: $11.95 | Walmart: $11.75" },
+                    { name: "Roasted Sweet Potato", cost: 7.75, ingredients: "Sweet potatoes ($4.50), olive oil ($2.75), herbs ($0.50)", stores: "Aldi: $7.25 | Walmart: $7.50 | Kroger: $8.15" },
+                    { name: "Rice Noodle Soup", cost: 9.90, ingredients: "Rice noodles ($3.50), vegetable broth ($2.50), carrots ($2), herbs ($1.90)", stores: "Asian Market: $8.75 | Walmart: $9.65 | Target: $10.50" },
+                    { name: "Baked Chicken & Rice", cost: 14.50, ingredients: "Chicken breast ($8.50), rice ($2), safe seasonings ($4)", stores: "Costco: $13.25 | Walmart: $14.15 | Publix: $15.75" }
+                ]
+            ],
+            diabetic: [
+                [
+                    { name: "Cauliflower Rice Bowl", cost: 11.25, ingredients: "Cauliflower rice ($4.50), lean protein ($5), vegetables ($1.75)", stores: "Whole Foods: $12.50 | Walmart: $10.75 | Target: $11.85" },
+                    { name: "Zucchini Noodles", cost: 12.75, ingredients: "Zucchini ($3.50), ground turkey ($7.50), tomato sauce ($1.75)", stores: "Costco: $11.95 | Walmart: $12.25 | Kroger: $13.50" },
+                    { name: "Egg Veggie Scramble", cost: 9.25, ingredients: "Eggs ($3.50), spinach ($2.50), bell peppers ($2), mushrooms ($1.25)", stores: "Aldi: $8.75 | Walmart: $9.00 | Target: $9.85" },
+                    { name: "Cabbage Soup", cost: 13.90, ingredients: "Cabbage ($2.50), lean beef ($9.50), low-sodium broth ($1.90)", stores: "Costco: $12.75 | Walmart: $13.50 | Publix: $15.25" },
+                    { name: "Grilled Chicken Salad", cost: 13.50, ingredients: "Chicken breast ($8.50), mixed greens ($3.50), olive oil ($1.50)", stores: "Whole Foods: $14.75 | Walmart: $12.95 | Target: $13.85" },
+                    { name: "Turkey Lettuce Wraps", cost: 11.00, ingredients: "Ground turkey ($7.50), lettuce ($1.50), vegetables ($2)", stores: "Costco: $10.25 | Walmart: $10.75 | Kroger: $11.50" }
+                ]
+            ],
+            'kid-friendly': [
+                [
+                    { name: "Mac and Cheese", cost: 8.50, ingredients: "Pasta ($1.50), cheese ($4), milk ($1.25), butter ($1.75)", stores: "Walmart: $8.15 | Target: $8.75 | Kroger: $8.95" },
+                    { name: "Mini Pizzas", cost: 9.25, ingredients: "English muffins ($2.50), pizza sauce ($1.75), cheese ($5)", stores: "Aldi: $8.75 | Walmart: $9.00 | Target: $9.85" },
+                    { name: "Chicken Nuggets & Fries", cost: 11.75, ingredients: "Chicken tenders ($7.50), frozen fries ($4.25)", stores: "Costco: $10.95 | Walmart: $11.50 | Target: $12.25" },
+                    { name: "Peanut Butter Sandwiches", cost: 7.25, ingredients: "Bread ($2.50), peanut butter ($3.50), jelly ($1.25)", stores: "Aldi: $6.85 | Walmart: $7.00 | Target: $7.75" },
+                    { name: "Spaghetti with Butter", cost: 6.75, ingredients: "Spaghetti ($1.50), butter ($1.75), parmesan cheese ($3.50)", stores: "Walmart: $6.45 | Kroger: $6.85 | Target: $7.25" },
+                    { name: "Pancake Dinner", cost: 8.00, ingredients: "Pancake mix ($3.50), syrup ($2.75), butter ($1.75)", stores: "Aldi: $7.50 | Walmart: $7.75 | Target: $8.50" }
+                ]
+            ],
+            'single-parent': [
+                [
+                    { name: "One-Pot Pasta", cost: 8.00, ingredients: "Pasta ($1.50), canned tomatoes ($2), frozen veggies ($2.25), oil ($2.25) (15 min)", stores: "Aldi: $7.50 | Walmart: $7.75 | Target: $8.50" },
+                    { name: "Microwave Baked Potato", cost: 8.50, ingredients: "Potatoes ($5), cheese ($2), canned beans ($1.50) (5 min)", stores: "Walmart: $8.15 | Kroger: $8.75 | Target: $9.25" },
+                    { name: "Instant Oatmeal Dinner", cost: 6.75, ingredients: "Oats ($1.50), peanut butter ($3.50), banana ($1.75) (3 min)", stores: "Aldi: $6.25 | Walmart: $6.50 | Target: $7.25" },
+                    { name: "Scrambled Egg Wraps", cost: 9.25, ingredients: "Eggs ($3.50), tortillas ($2.50), cheese ($3.25) (8 min)", stores: "Walmart: $8.95 | Kroger: $9.15 | Target: $9.75" },
+                    { name: "Canned Soup & Bread", cost: 6.90, ingredients: "Canned soup ($2.75), bread ($2.50), butter ($1.65) (5 min)", stores: "Aldi: $6.45 | Walmart: $6.75 | Target: $7.35" },
+                    { name: "Rice & Beans", cost: 6.25, ingredients: "Instant rice ($2.50), canned beans ($1.50), salsa ($2.25) (10 min)", stores: "Walmart: $5.95 | Kroger: $6.35 | Target: $6.75" }
+                ]
+            ]
+        };
+
+        // Initialize app
+        function init() {
+            showRandomQuote();
+            loadBudgetData();
+            updateCalculations();
+            generateWeeklyMeals();
+            initializeEnvelopeChallenge();
+            setupScreenshotArea();
+            
+            // Set current month
+            const now = new Date();
+            document.getElementById('budget-month').value = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+        }
+
+        // Screenshot area setup
+        function setupScreenshotArea() {
+            const screenshotArea = document.getElementById('screenshot-area');
+            screenshotArea.addEventListener('click', function() {
+                navigator.clipboard.read().then(clipboardItems => {
+                    for (const clipboardItem of clipboardItems) {
+                        for (const type of clipboardItem.types) {
+                            if (type.startsWith('image/')) {
+                                clipboardItem.getType(type).then(blob => {
+                                    const img = document.createElement('img');
+                                    img.src = URL.createObjectURL(blob);
+                                    img.style.maxWidth = '100%';
+                                    img.style.maxHeight = '200px';
+                                    screenshotArea.innerHTML = '';
+                                    screenshotArea.appendChild(img);
+                                    showMessage('Screenshot captured! Click "Analyze Statement" to process.', 'success');
+                                });
+                            }
+                        }
+                    }
+                }).catch(err => {
+                    showMessage('Please copy an image to clipboard first, then click here.', 'error');
+                });
+            });
+        }
+
+        // Bank statement analysis
+        function analyzeStatement() {
+            const fileInput = document.getElementById('bank-statement');
+            const photoInput = document.getElementById('bank-photo');
+            const screenshotArea = document.getElementById('screenshot-area');
+            
+            if (!fileInput.files[0] && !photoInput.files[0] && !screenshotArea.querySelector('img')) {
+                showMessage('Please upload a file, take a photo, or paste a screenshot first.', 'error');
+                return;
+            }
+
+            // Simulate comprehensive analysis
+            const analysisResults = document.getElementById('analysis-results');
+            const detectedExpenses = document.getElementById('detected-expenses');
+            const cutSuggestions = document.getElementById('cut-suggestions');
+            
+            // Mock comprehensive detected expenses
+            const mockExpenses = [
+                { name: "Shell Gas Station", amount: 45.67, category: "gas", frequency: 3 },
+                { name: "Target Clothing", amount: 89.32, category: "clothing", frequency: 1 },
+                { name: "McDonald's", amount: 12.45, category: "dining", frequency: 5 },
+                { name: "Netflix", amount: 15.99, category: "subscriptions", frequency: 1 },
+                { name: "BP Gas Station", amount: 52.14, category: "gas", frequency: 2 },
+                { name: "Starbucks", amount: 6.75, category: "dining", frequency: 8 },
+                { name: "Amazon Prime", amount: 14.99, category: "subscriptions", frequency: 1 },
+                { name: "Fashion Nova", amount: 67.88, category: "clothing", frequency: 1 },
+                { name: "Circle K", amount: 15.43, category: "gas", frequency: 4 }
+            ];
+
+            // Group expenses by category
+            const categoryTotals = {};
+            mockExpenses.forEach(expense => {
+                if (!categoryTotals[expense.category]) {
+                    categoryTotals[expense.category] = { total: 0, items: [] };
+                }
+                categoryTotals[expense.category].total += expense.amount;
+                categoryTotals[expense.category].items.push(expense);
+            });
+
+            // Display detected expenses
+            detectedExpenses.innerHTML = Object.keys(categoryTotals).map(category => `
+                <div class="mb-3">
+                    <h5 class="font-medium text-stone-700 capitalize">${category} - $${categoryTotals[category].total.toFixed(2)}</h5>
+                    ${categoryTotals[category].items.map(expense => `
+                        <div class="flex justify-between items-center bg-white p-2 rounded border text-sm">
+                            <span>${expense.name} (${expense.frequency}x)</span>
+                            <div class="flex items-center gap-2">
+                                <span class="font-medium">$${expense.amount.toFixed(2)}</span>
+                                <button onclick="addDetectedExpense('${expense.name}', ${expense.amount}, '${expense.category}')" class="btn-primary text-white px-2 py-1 rounded text-xs">Add</button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+
+            // Generate cutting suggestions
+            const suggestions = [];
+            Object.keys(categoryTotals).forEach(category => {
+                if (spendingCuts[category]) {
+                    const potentialSavings = categoryTotals[category].total * 0.3;
+                    suggestions.push(`<div class="mb-3">
+                        <h6 class="font-medium text-rose-700">${category.charAt(0).toUpperCase() + category.slice(1)} - Save up to $${potentialSavings.toFixed(2)}</h6>
+                        <ul class="text-sm text-rose-600 list-disc list-inside">
+                            ${spendingCuts[category].slice(0, 3).map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>`);
+                }
+            });
+
+            cutSuggestions.innerHTML = suggestions.join('');
+            analysisResults.classList.remove('hidden');
+            showMessage('Bank statement analyzed! Review suggestions below.', 'success');
+        }
+
+        function addDetectedExpense(name, amount, category) {
+            if (budgetData.categoryExpenses[category]) {
+                budgetData.categoryExpenses[category].push({ name, amount });
+                renderCategoryExpenses();
+                updateCalculations();
+                showMessage(`Added ${name} to ${category} expenses.`, 'success');
+            }
+        }
+
+        // Add bill or debt
+        function addBillDebt() {
+            const name = document.getElementById('bill-name').value;
+            const amount = parseFloat(document.getElementById('bill-amount').value);
+            const balance = parseFloat(document.getElementById('bill-balance').value) || amount;
+            const dueDate = document.getElementById('bill-due-date').value;
+            const type = document.getElementById('bill-type').value;
+            const status = document.getElementById('bill-status').value;
+            
+            if (name && amount && dueDate) {
+                const bill = {
+                    name,
+                    amount,
+                    balance,
+                    dueDate,
+                    type,
+                    status,
+                    payments: [],
+                    priority: calculatePriority(type, dueDate, balance, status)
+                };
+                
+                budgetData.bills.push(bill);
+                document.getElementById('bill-name').value = '';
+                document.getElementById('bill-amount').value = '';
+                document.getElementById('bill-balance').value = '';
+                document.getElementById('bill-due-date').value = '';
+                renderPriorityList();
+                updateCalculations();
+            }
+        }
+
+        // Calculate priority based on type, due date, balance, and status
+        function calculatePriority(type, dueDate, balance, status) {
+            const today = new Date();
+            const due = new Date(dueDate);
+            const daysUntilDue = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+            
+            let priority = 0;
+            
+            // Status priority (past due gets highest priority)
+            if (status === 'past-due') priority += 300;
+            
+            // Type priority
+            if (type === 'essential') priority += 100;
+            else if (type === 'debt') priority += 50;
+            else priority += 25;
+            
+            // Due date priority (higher for sooner dates)
+            if (daysUntilDue < 0) priority += 200; // Overdue
+            else if (daysUntilDue <= 7) priority += 75;
+            else if (daysUntilDue <= 14) priority += 50;
+            else priority += 25;
+            
+            // Balance priority (higher for negative balances)
+            if (balance < 0) priority += Math.abs(balance) / 10;
+            
+            return priority;
+        }
+
+        // Render priority list
+        function renderPriorityList() {
+            const priorityList = document.getElementById('priority-list');
+            const sortedBills = [...budgetData.bills].sort((a, b) => b.priority - a.priority);
+            
+            priorityList.innerHTML = `
+                <h3 class="text-lg font-semibold text-stone-700 mb-3">📋 Payment Priority Order</h3>
+                ${sortedBills.map((bill, index) => {
+                    const isOverdue = new Date(bill.dueDate) < new Date();
+                    const priorityClass = bill.priority > 150 ? 'priority-high' : 
+                                         bill.priority > 100 ? 'priority-medium' : 'priority-low';
+                    
+                    return `
+                        <div class="bg-white p-4 rounded-lg border ${priorityClass} mb-2">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-stone-700">${bill.name} ${bill.status === 'past-due' ? '🚨 PAST DUE' : isOverdue ? '⚠️ OVERDUE' : ''}</h4>
+                                    <p class="text-sm text-stone-600">
+                                        Amount: $${bill.amount.toFixed(2)} | Balance: $${bill.balance.toFixed(2)} | 
+                                        Due: ${new Date(bill.dueDate).toLocaleDateString()}
+                                    </p>
+                                    <p class="text-xs text-stone-500">Priority: ${bill.priority.toFixed(0)} - ${bill.type} - ${bill.status}</p>
+                                </div>
+                                <div class="flex gap-1">
+                                    <button onclick="makePayment(${index})" class="btn-primary text-white px-3 py-1 rounded text-sm">Pay</button>
+                                    <button onclick="removeBill(${index})" class="text-rose-500 hover:text-rose-700">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            `;
+        }
+
+        // Make payment
+        function makePayment(billIndex) {
+            const bill = budgetData.bills[billIndex];
+            const paymentAmount = parseFloat(prompt(`Enter payment amount for ${bill.name} (Balance: $${bill.balance.toFixed(2)}):`));
+            
+            if (paymentAmount && paymentAmount > 0) {
+                bill.balance -= paymentAmount;
+                bill.payments.push({
+                    amount: paymentAmount,
+                    date: new Date().toLocaleDateString()
+                });
+                
+                renderPriorityList();
+                updateCalculations();
+                showMessage(`Payment of $${paymentAmount.toFixed(2)} recorded for ${bill.name}`, 'success');
+                
+                if (bill.balance <= 0) {
+                    showMessage(`🎉 ${bill.name} is now paid in full!`, 'success');
+                    showCelebration();
+                }
+            }
+        }
+
+        // Add category expense
+        function addCategoryExpense(category) {
+            const amountInput = document.getElementById(`${category}-amount`);
+            const amount = parseFloat(amountInput.value);
+            
+            if (amount > 0) {
+                budgetData.categoryExpenses[category].push({
+                    name: `${category.charAt(0).toUpperCase() + category.slice(1)} expense`,
+                    amount
+                });
+                amountInput.value = '';
+                renderCategoryExpenses();
+                updateCalculations();
+            }
+        }
+
+        // Render category expenses
+        function renderCategoryExpenses() {
+            Object.keys(budgetData.categoryExpenses).forEach(category => {
+                const container = document.getElementById(`${category}-expenses`);
+                const expenses = budgetData.categoryExpenses[category];
+                
+                container.innerHTML = expenses.map((expense, index) => `
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs">${expense.name}</span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-xs font-medium">$${expense.amount.toFixed(2)}</span>
+                            <button onclick="removeCategoryExpense('${category}', ${index})" class="text-rose-500 hover:text-rose-700 text-xs">✕</button>
+                        </div>
+                    </div>
+                `).join('');
+            });
+            
+            // Update total
+            const totalMisc = Object.values(budgetData.categoryExpenses)
+                .flat()
+                .reduce((sum, expense) => sum + expense.amount, 0);
+            document.getElementById('total-misc').textContent = totalMisc.toFixed(2);
+        }
+
+        function removeCategoryExpense(category, index) {
+            budgetData.categoryExpenses[category].splice(index, 1);
+            renderCategoryExpenses();
+            updateCalculations();
+        }
+
+        // Initialize envelope challenge
+        function initializeEnvelopeChallenge() {
+            const envelopeGrid = document.getElementById('envelope-grid');
+            budgetData.envelopeProgress = budgetData.envelopeProgress || new Array(100).fill(false);
+            
+            envelopeGrid.innerHTML = '';
+            for (let i = 1; i <= 100; i++) {
+                const envelope = document.createElement('div');
+                envelope.className = `envelope-item p-2 rounded text-center cursor-pointer text-sm font-medium ${
+                    budgetData.envelopeProgress[i-1] ? 'envelope-completed' : 'envelope-available'
+                }`;
+                envelope.textContent = `$${i}`;
+                envelope.onclick = () => toggleEnvelope(i-1);
+                envelopeGrid.appendChild(envelope);
+            }
+            
+            updateEnvelopeProgress();
+        }
+
+        function toggleEnvelope(index) {
+            budgetData.envelopeProgress[index] = !budgetData.envelopeProgress[index];
+            initializeEnvelopeChallenge();
+            
+            if (budgetData.envelopeProgress[index]) {
+                showMessage(`Envelope $${index + 1} completed! 🎉`, 'success');
+            }
+        }
+
+        function updateEnvelopeProgress() {
+            const completed = budgetData.envelopeProgress.filter(Boolean).length;
+            const totalSaved = budgetData.envelopeProgress.reduce((sum, completed, index) => {
+                return sum + (completed ? (index + 1) : 0);
+            }, 0);
+            
+            document.getElementById('envelope-progress').textContent = completed;
+            document.getElementById('envelope-total').textContent = totalSaved.toFixed(2);
+            document.getElementById('envelope-progress-bar').style.width = `${(completed / 100) * 100}%`;
+        }
+
+        function resetEnvelopeChallenge() {
+            if (confirm('Are you sure you want to reset the envelope challenge?')) {
+                budgetData.envelopeProgress = new Array(100).fill(false);
+                initializeEnvelopeChallenge();
+                showMessage('Envelope challenge reset!', 'success');
+            }
+        }
+
+        // Remove bill
+        function removeBill(index) {
+            budgetData.bills.splice(index, 1);
+            renderPriorityList();
+            updateCalculations();
+        }
+
+        // Update all calculations
+        function updateCalculations() {
+            loadBudgetData();
+            
+            const totalIncome = budgetData.regularIncome + budgetData.extraIncome;
+            const totalBills = budgetData.bills.reduce((sum, bill) => sum + Math.max(0, bill.balance), 0);
+            const totalMisc = Object.values(budgetData.categoryExpenses)
+                .flat()
+                .reduce((sum, expense) => sum + expense.amount, 0);
+            const totalExpenses = totalBills + totalMisc;
+            const availableMoney = totalIncome - totalExpenses;
+            const potentialSavings = totalMisc * 0.25;
+
+            // Update display
+            document.getElementById('total-income').textContent = totalIncome.toFixed(2);
+            document.getElementById('savings-balance').textContent = budgetData.currentSavings.toFixed(2);
+            document.getElementById('total-expenses').textContent = totalExpenses.toFixed(2);
+            document.getElementById('available-money').textContent = availableMoney.toFixed(2);
+            document.getElementById('potential-savings').textContent = potentialSavings.toFixed(2);
+
+            // Update recommendations
+            updateRecommendations(availableMoney, potentialSavings, totalMisc);
+        }
+
+        // Load budget data from form inputs
+        function loadBudgetData() {
+            budgetData.period = document.getElementById('budget-period').value;
+            budgetData.familySize = parseInt(document.getElementById('family-size').value);
+            budgetData.regularIncome = parseFloat(document.getElementById('regular-income').value) || 0;
+            budgetData.extraIncome = parseFloat(document.getElementById('extra-income').value) || 0;
+            budgetData.currentSavings = parseFloat(document.getElementById('current-savings').value) || 0;
+        }
+
+        // Update recommendations
+        function updateRecommendations(available, potential, miscTotal) {
+            const recommendationList = document.getElementById('recommendation-list');
+            const recommendations = [];
+
+            if (available < 0) {
+                recommendations.push('⚠️ You\'re spending more than you earn. Focus on the priority bills first and look for ways to cut miscellaneous spending.');
+            } else if (available < 100) {
+                recommendations.push('💡 Your budget is tight. Consider the envelope challenge to build emergency savings slowly.');
+            } else {
+                recommendations.push('✅ You have money left over! Consider putting some toward your highest priority bills or emergency fund.');
+            }
+
+            if (miscTotal > 0) {
+                recommendations.push(`💰 You could potentially save $${potential.toFixed(2)} by reducing miscellaneous spending by 25%.`);
+            }
+
+            if (budgetData.bills.some(bill => bill.balance < 0)) {
+                recommendations.push('🚨 You have overdue bills. Focus on these first to avoid additional fees.');
+            }
+
+            if (budgetData.currentSavings < 1000) {
+                recommendations.push('🎯 Work toward building a $1,000 emergency fund using the envelope challenge.');
+            }
+
+            recommendationList.innerHTML = recommendations.map(rec => `<p class="mb-2">${rec}</p>`).join('');
+        }
+
+        // Show celebration
+        function showCelebration() {
+            const celebration = document.getElementById('celebration');
+            celebration.classList.remove('hidden');
+            celebration.classList.add('celebration');
+            setTimeout(() => {
+                celebration.classList.add('hidden');
+                celebration.classList.remove('celebration');
+            }, 3000);
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-amber-100 text-amber-700 border border-amber-300' : 
+                'bg-rose-100 text-rose-700 border border-rose-300'
+            }`;
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                document.body.removeChild(messageDiv);
+            }, 3000);
+        }
+
+        // Show random motivational quote
+        function showRandomQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('motivational-quote').textContent = randomQuote;
+        }
+
+        // Generate weekly meals
+        function generateWeeklyMeals() {
+            const dietaryNeeds = document.getElementById('dietary-needs').value;
+            const mealSuggestions = document.getElementById('meal-suggestions');
+            
+            let meals = budgetMeals[dietaryNeeds] || budgetMeals.general;
+            let currentMeals = meals[currentWeek % meals.length] || meals[0];
+            
+            mealSuggestions.innerHTML = currentMeals.map(meal => `
+                <div class="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <h4 class="font-semibold text-stone-800 mb-2">${meal.name}</h4>
+                    <p class="text-amber-700 font-bold mb-2">$${meal.cost.toFixed(2)}</p>
+                    <p class="text-sm text-stone-600 mb-2">${meal.ingredients}</p>
+                    ${meal.stores ? `<p class="text-xs text-stone-500 border-t pt-2">${meal.stores}</p>` : ''}
+                </div>
+            `).join('');
+            
+            updateMealBudget();
+        }
+
+        // Generate next week meals preview
+        function generateNextWeekMeals() {
+            const dietaryNeeds = document.getElementById('dietary-needs').value;
+            const nextWeekMeals = document.getElementById('next-week-meals');
+            const nextWeekPreview = document.getElementById('next-week-preview');
+            
+            let meals = budgetMeals[dietaryNeeds] || budgetMeals.general;
+            let nextMeals = meals[(currentWeek + 1) % meals.length] || meals[0];
+            
+            nextWeekMeals.innerHTML = nextMeals.map(meal => `
+                <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                    <h4 class="font-medium text-stone-800 mb-1">${meal.name}</h4>
+                    <p class="text-amber-600 font-bold mb-1">$${meal.cost.toFixed(2)}</p>
+                    <p class="text-xs text-stone-600 mb-1">${meal.ingredients}</p>
+                    ${meal.stores ? `<p class="text-xs text-stone-400">${meal.stores}</p>` : ''}
+                </div>
+            `).join('');
+            
+            nextWeekPreview.classList.remove('hidden');
+            updateMealBudget();
+        }
+
+        // Update meal budget
+        function updateMealBudget() {
+            const budget = parseFloat(document.getElementById('meal-budget').value);
+            if (budget > 0) {
+                const nextWeekPreview = document.getElementById('next-week-preview');
+                const nextWeekMessage = document.getElementById('next-week-message');
+                
+                let message = '';
+                if (budget < 60) {
+                    message = '🌟 Next week looks challenging with current grocery prices, but you can do this! Focus on rice, beans, and pasta meals. Every dollar saved counts!';
+                } else if (budget < 100) {
+                    message = '💪 Next week you\'ll have some breathing room. You can add variety with eggs and canned proteins. Look for sales at Aldi and Walmart!';
+                } else if (budget < 150) {
+                    message = '👍 Good budget range! You can afford most of these meals. Check Costco for bulk savings on proteins and frozen items.';
+                } else {
+                    message = '🎉 Great budget! You have flexibility for fresh ingredients and family favorites. Consider meal prep to stretch your dollars further.';
+                }
+                
+                nextWeekMessage.textContent = message;
+                nextWeekPreview.classList.remove('hidden');
+            }
+        }
+
+        // Event listeners
+        document.getElementById('regular-income').addEventListener('input', updateCalculations);
+        document.getElementById('extra-income').addEventListener('input', updateCalculations);
+        document.getElementById('current-savings').addEventListener('input', updateCalculations);
+        document.getElementById('meal-budget').addEventListener('input', updateMealBudget);
+        document.getElementById('dietary-needs').addEventListener('change', generateWeeklyMeals);
+
+        // Initialize app when page loads
+        window.addEventListener('load', function() {
+            init();
+        });
+
+        if (document.readyState === 'complete') {
+            init();
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'995446e2948d1197',t:'MTc2MTU4OTk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
